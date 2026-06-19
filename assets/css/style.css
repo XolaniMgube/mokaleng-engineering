@@ -322,11 +322,10 @@ h1, h2, h3, h4 {
   top: 0;
   z-index: 100;
   background: transparent;
-  border-bottom: 1px solid transparent;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   box-shadow: none;
-  transition: background 0.45s ease, box-shadow 0.45s ease, border-color 0.45s ease, backdrop-filter 0.45s ease;
+  transition: background 0.45s ease, box-shadow 0.45s ease, backdrop-filter 0.45s ease;
 }
 /* Soft top scrim so the floating controls stay readable over image heroes. */
 .header::before {
@@ -340,7 +339,6 @@ h1, h2, h3, h4 {
 }
 .header.is-solid {
   background: transparent;
-  border-bottom-color: transparent;
   box-shadow: none;
 }
 .header.is-solid::before { opacity: 0.35; }
@@ -943,6 +941,81 @@ body.menu-open { overflow: hidden; }
     radial-gradient(ellipse at 90% 20%, rgba(194,112,59,0.1), transparent 38%),
     radial-gradient(ellipse at 10% 70%, rgba(0,158,165,0.12), transparent 40%),
     #0F1A1A;
+}
+
+/* ── Why Mokaleng ────────────────────────────────────────────────────────── */
+.why-choose {
+  background:
+    radial-gradient(ellipse at 88% 12%, rgba(194,112,59,0.1), transparent 40%),
+    radial-gradient(ellipse at 8% 85%, rgba(0,158,165,0.13), transparent 42%),
+    #0F1A1A;
+}
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+.why-intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.5rem 1rem 0.5rem 0;
+}
+.why-intro__title {
+  color: var(--white);
+  font-size: clamp(1.7rem, 1.3rem + 1.6vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.12;
+  margin: 0.7rem 0 1rem;
+}
+.why-intro__text {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  max-width: 36ch;
+}
+.why-card {
+  position: relative;
+  background: rgba(255,255,255,0.045);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.4rem, 1.1rem + 1vw, 1.9rem);
+  transition: border-color var(--speed) var(--ease), background var(--speed) var(--ease), transform var(--speed) var(--ease);
+}
+.why-card:hover {
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(0,158,165,0.45);
+  transform: translateY(-4px);
+}
+.why-card__icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 1.1rem;
+  background: linear-gradient(180deg, rgba(0,158,165,0.28), rgba(0,158,165,0.12));
+  border: 1px solid rgba(0,158,165,0.35);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.18);
+}
+.why-card__icon svg { width: 24px; height: 24px; stroke: var(--teal-light); }
+.why-card__title {
+  color: var(--white);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.55rem;
+}
+.why-card__text {
+  color: rgba(255,255,255,0.55);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+@media (max-width: 900px) {
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .why-intro { padding-bottom: 0.5rem; }
+}
+@media (max-width: 560px) {
+  .why-grid { grid-template-columns: 1fr; }
 }
 
 .feature {
