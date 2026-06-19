@@ -3,12 +3,16 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script>document.documentElement.classList.add("js");</script>
 <meta name="theme-color" content="#009EA5" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/css/style.css" />
-<link rel="icon" type="image/png" href="assets/img/logo.png" />
+<link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png" />
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
 <title>Mokaleng | Structural, Mechanical & Piping Engineering — South Africa</title>
 <meta name="description" content="Mokaleng SMP provides structural, mechanical, piping, welding, fabrication and inspection services for South Africa's petrochemical, energy, mining and industrial sectors." />
 </head>
@@ -106,12 +110,18 @@
 
 
 <!-- ── About intro ───────────────────────────────────────────────────────── -->
-<section class="section landing-intro">
-  <div class="container split">
-    <div class="reveal">
+<section class="section landing-intro" id="about-preview">
+  <div class="container landing-about">
+    <div class="landing-about__copy reveal">
       <p class="eyebrow">About Mokaleng</p>
-      <h2 class="heading__title">A focused partner for live plant environments.</h2>
-      <p class="lead mt-1">We combine rigorous engineering with practical site execution — safely, on schedule, and to the highest quality standards.</p>
+      <h2 class="heading__title">Specialised engineering for demanding industrial sites.</h2>
+      <p class="lead mt-1">Mokaleng SMP provides engineering consulting and construction support across structural, mechanical, piping, metallurgical, welding and quality risk-based inspection work.</p>
+      <!-- <p class="landing-about__text">Since 2015, our team has helped clients fabricate, install, maintain and repair critical plant infrastructure with a practical focus on safety, quality and compliance.</p> -->
+      <div class="landing-about__proof">
+        <!-- <span>Petrochemical</span>
+        <span>Power generation</span>
+        <span>Utilities</span> -->
+      </div>
       <div class="flex-actions mt-2">
         <a class="btn btn--teal-outline" href="about.html">
           More about us
@@ -119,18 +129,24 @@
         </a>
       </div>
     </div>
-    <div class="landing-metrics reveal" data-delay="1">
-      <div>
-        <strong>04</strong>
-        <span>ISO management standards certified</span>
+
+    <div class="landing-about__panel reveal" data-delay="1">
+      <div class="landing-about__media">
+        <img src="assets/img/about-us.png" alt="Mokaleng engineers reviewing site drawings" loading="lazy" decoding="async" />
       </div>
-      <div>
-        <strong>Level 1</strong>
-        <span>B-BBEE contributor</span>
-      </div>
-      <div>
-        <strong>9+</strong>
-        <span>Industrial sectors served</span>
+      <div class="landing-metrics" aria-label="Company highlights">
+        <div>
+          <strong>2015</strong>
+          <span>In operation since</span>
+        </div>
+        <div>
+          <strong>100+</strong>
+          <span>Years combined expertise</span>
+        </div>
+        <div>
+          <strong>Level 1</strong>
+          <span>B-BBEE contributor</span>
+        </div>
       </div>
     </div>
   </div>
@@ -153,7 +169,7 @@
     <div class="grid cols-3 mt-3">
       <article class="service-card reveal">
         <div class="service-card__media">
-          <img src="assets/img/structural-engineering.png" alt="Structural steel and platform fabrication" />
+          <img src="assets/img/structural-engineering.png" alt="Structural steel and platform fabrication" loading="lazy" decoding="async" />
         </div>
         <div class="service-card__body">
           <h3 class="service-card__title">Structural & lifting</h3>
@@ -172,7 +188,7 @@
 
       <article class="service-card reveal" data-delay="1">
         <div class="service-card__media">
-          <img src="assets/img/mechenical.png" alt="Mechanical equipment maintenance on-site" />
+          <img src="assets/img/mechenical.png" alt="Mechanical equipment maintenance on-site" loading="lazy" decoding="async" />
         </div>
         <div class="service-card__body">
           <h3 class="service-card__title">Mechanical shutdowns</h3>
@@ -191,7 +207,7 @@
 
       <article class="service-card reveal" data-delay="2">
         <div class="service-card__media">
-          <img src="assets/img/piping.png" alt="Coded welding and piping fabrication" />
+          <img src="assets/img/piping.png" alt="Coded welding and piping fabrication" loading="lazy" decoding="async" />
         </div>
         <div class="service-card__body">
           <h3 class="service-card__title">Piping & welding</h3>
@@ -289,23 +305,23 @@
       <p class="trusted__label">Trusted by leading operators &amp; contractors</p>
       <div class="marquee">
         <div class="marquee__track">
-          <div class="marquee__chip"><img src="assets/img/client-seriti.png" alt="Seriti" /></div>
-          <div class="marquee__chip"><img src="assets/img/client-sasol.png" alt="Sasol" /></div>
-          <div class="marquee__chip"><img src="assets/img/client-eskom.png" alt="Eskom" /></div>
-          <div class="marquee__chip"><img src="assets/img/client-babcock.png" alt="Babcock" /></div>
-          <div class="marquee__chip"><img src="assets/img/client-randwater.png" alt="Rand Water" /></div>
-          <div class="marquee__chip"><img src="assets/img/client-mabro.png" alt="Mabro" /></div>
-          <div class="marquee__chip"><img src="assets/img/client-cooperheat.png" alt="Cooperheat" /></div>
-          <div class="marquee__chip"><img src="assets/img/client-newage.png" alt="New Age" /></div>
+          <div class="marquee__chip"><img src="assets/img/client-seriti.png" alt="Seriti" loading="lazy" decoding="async" /></div>
+          <div class="marquee__chip"><img src="assets/img/client-sasol.png" alt="Sasol" loading="lazy" decoding="async" /></div>
+          <div class="marquee__chip"><img src="assets/img/client-eskom.png" alt="Eskom" loading="lazy" decoding="async" /></div>
+          <div class="marquee__chip"><img src="assets/img/client-babcock.png" alt="Babcock" loading="lazy" decoding="async" /></div>
+          <div class="marquee__chip"><img src="assets/img/client-randwater.png" alt="Rand Water" loading="lazy" decoding="async" /></div>
+          <div class="marquee__chip"><img src="assets/img/client-mabro.png" alt="Mabro" loading="lazy" decoding="async" /></div>
+          <div class="marquee__chip"><img src="assets/img/client-cooperheat.png" alt="Cooperheat" loading="lazy" decoding="async" /></div>
+          <div class="marquee__chip"><img src="assets/img/client-newage.png" alt="New Age" loading="lazy" decoding="async" /></div>
           <!-- duplicate set for seamless loop -->
-          <div class="marquee__chip" aria-hidden="true"><img src="assets/img/client-seriti.png" alt="" /></div>
-          <div class="marquee__chip" aria-hidden="true"><img src="assets/img/client-sasol.png" alt="" /></div>
-          <div class="marquee__chip" aria-hidden="true"><img src="assets/img/client-eskom.png" alt="" /></div>
-          <div class="marquee__chip" aria-hidden="true"><img src="assets/img/client-babcock.png" alt="" /></div>
-          <div class="marquee__chip" aria-hidden="true"><img src="assets/img/client-randwater.png" alt="" /></div>
-          <div class="marquee__chip" aria-hidden="true"><img src="assets/img/client-mabro.png" alt="" /></div>
-          <div class="marquee__chip" aria-hidden="true"><img src="assets/img/client-cooperheat.png" alt="" /></div>
-          <div class="marquee__chip" aria-hidden="true"><img src="assets/img/client-newage.png" alt="" /></div>
+          <div class="marquee__chip" aria-hidden="true"><img src="assets/img/client-seriti.png" alt="" loading="lazy" decoding="async" /></div>
+          <div class="marquee__chip" aria-hidden="true"><img src="assets/img/client-sasol.png" alt="" loading="lazy" decoding="async" /></div>
+          <div class="marquee__chip" aria-hidden="true"><img src="assets/img/client-eskom.png" alt="" loading="lazy" decoding="async" /></div>
+          <div class="marquee__chip" aria-hidden="true"><img src="assets/img/client-babcock.png" alt="" loading="lazy" decoding="async" /></div>
+          <div class="marquee__chip" aria-hidden="true"><img src="assets/img/client-randwater.png" alt="" loading="lazy" decoding="async" /></div>
+          <div class="marquee__chip" aria-hidden="true"><img src="assets/img/client-mabro.png" alt="" loading="lazy" decoding="async" /></div>
+          <div class="marquee__chip" aria-hidden="true"><img src="assets/img/client-cooperheat.png" alt="" loading="lazy" decoding="async" /></div>
+          <div class="marquee__chip" aria-hidden="true"><img src="assets/img/client-newage.png" alt="" loading="lazy" decoding="async" /></div>
         </div>
       </div>
     </div>
@@ -314,7 +330,7 @@
 
 <!-- ── CTA ───────────────────────────────────────────────────────────────── -->
 <section class="cta">
-  <div class="cta__bg"><img src="assets/img/CTA.png" alt="" aria-hidden="true" /></div>
+  <div class="cta__bg"><img src="assets/img/CTA.png" alt="" aria-hidden="true" loading="lazy" decoding="async" /></div>
   <div class="container section">
     <div class="cta__inner reveal">
       <p class="eyebrow on-dark">Start a conversation</p>
@@ -379,8 +395,9 @@
     <div class="footer__bottom">
       <span class="reg">Mokaleng Engineering Projects (Pty) Ltd · Reg 2025/217697/07</span>
       <div class="footer__legal">
-        <a href="#">Privacy Policy / POPIA</a>
+        <a href="contact.html#enquiry">Privacy / POPIA requests</a>
         <span>&copy; <span id="year">2026</span> Mokaleng. All rights reserved.</span>
+        <a class="site-signature" href="https://africonnectsolutions.co.za" target="_blank" rel="noopener">Website by <strong>Africonnect Solutions</strong></a>
       </div>
     </div>
   </div>

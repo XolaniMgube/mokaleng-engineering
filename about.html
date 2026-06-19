@@ -3,12 +3,16 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script>document.documentElement.classList.add("js");</script>
 <meta name="theme-color" content="#009EA5" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/css/style.css" />
-<link rel="icon" type="image/png" href="assets/img/logo.png" />
+<link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png" />
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
 <title>About Mokaleng | Proudly South African Engineering Company</title>
 <meta name="description" content="Mokaleng is an engineering consulting and construction company operating since 2015, with 100+ years of combined expertise across structural, mechanical, piping and welding disciplines." />
 </head>
@@ -75,7 +79,7 @@
   <div class="container">
   <div class="about-feature">
   <div class="about-feature__media reveal">
-    <img src="assets/img/about-us.png" alt="Mokaleng engineers reviewing plans on site" />
+    <img src="assets/img/about-us.png" alt="Mokaleng engineers reviewing plans on site" loading="lazy" decoding="async" />
     <div class="about-feature__media-bar"></div>
   </div>
   <div class="about-feature__body reveal" data-delay="1">
@@ -203,20 +207,20 @@
 <section class="section section--bone">
   <div class="container split split--reverse">
     <div class="split__media reveal">
-      <img src="assets/img/vision-mission.png" alt="Process column at a petrochemical plant" style="aspect-ratio:3/4" />
+      <img class="vision-media" src="assets/img/vision-mission.png" alt="Process column at a petrochemical plant" loading="lazy" decoding="async" />
     </div>
     <div class="reveal" data-delay="1">
       <p class="eyebrow">Vision &amp; Mission</p>
       <h2 class="heading__title">Technical work with long-term value.</h2>
 
-      <div class="mt-2" style="border-left:3px solid var(--teal);padding-left:1.3rem">
-        <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal-dark)">Vision</p>
-        <p class="lead mt-1" style="font-size:var(--step-1)">"To build a proudly South African company that empowers people, drives technical excellence, and delivers sustainable value to our clients, communities, and the industries we serve."</p>
+      <div class="vision-block mt-2">
+        <p class="vision-block__label">Vision</p>
+        <p class="lead mt-1 vision-block__text">"To build a proudly South African company that empowers people, drives technical excellence, and delivers sustainable value to our clients, communities, and the industries we serve."</p>
       </div>
 
-      <div class="mt-2" style="border-left:3px solid var(--teal-mid);padding-left:1.3rem">
-        <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal-dark)">Mission</p>
-        <p class="lead mt-1" style="font-size:var(--step-1)">"To deliver integrated Structural, Mechanical, Piping, and engineering solutions through technical excellence, quality workmanship, innovation, and an uncompromising commitment to safety, integrity, and long-term client partnerships."</p>
+      <div class="vision-block vision-block--mission mt-2">
+        <p class="vision-block__label">Mission</p>
+        <p class="lead mt-1 vision-block__text">"To deliver integrated Structural, Mechanical, Piping, and engineering solutions through technical excellence, quality workmanship, innovation, and an uncompromising commitment to safety, integrity, and long-term client partnerships."</p>
       </div>
     </div>
   </div>
@@ -225,7 +229,7 @@
 
 
 <!-- ── Clients ────────────────────────────────────────────────────────────── -->
-<section class="section">
+<section class="section" id="clients">
   <div class="container">
     <div class="heading reveal">
       <p class="eyebrow">Clients</p>
@@ -247,7 +251,7 @@
 
 <!-- ── CTA ───────────────────────────────────────────────────────────────── -->
 <section class="cta">
-  <div class="cta__bg"><img src="assets/img/CTA.png" alt="" aria-hidden="true" /></div>
+  <div class="cta__bg"><img src="assets/img/CTA.png" alt="" aria-hidden="true" loading="lazy" decoding="async" /></div>
   <div class="container section">
     <div class="cta__inner reveal">
       <p class="eyebrow on-dark">Work with us</p>
@@ -304,8 +308,9 @@
     <div class="footer__bottom">
       <span class="reg">Mokaleng Engineering Projects (Pty) Ltd · Reg 2025/217697/07</span>
       <div class="footer__legal">
-        <a href="#">Privacy Policy / POPIA</a>
+        <a href="contact.html#enquiry">Privacy / POPIA requests</a>
         <span>&copy; <span id="year">2026</span> Mokaleng. All rights reserved.</span>
+        <a class="site-signature" href="https://africonnectsolutions.co.za" target="_blank" rel="noopener">Website by <strong>Africonnect Solutions</strong></a>
       </div>
     </div>
   </div>

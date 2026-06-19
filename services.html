@@ -3,12 +3,16 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script>document.documentElement.classList.add("js");</script>
 <meta name="theme-color" content="#009EA5" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/css/style.css" />
-<link rel="icon" type="image/png" href="assets/img/logo.png" />
+<link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png" />
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
 <title>Services | Structural, Mechanical, Piping & Welding — Mokaleng</title>
 <meta name="description" content="Structural engineering and lifting equipment, mechanical shutdown support, and piping and welding solutions for South Africa's industrial sectors." />
 </head>
@@ -74,21 +78,21 @@
 <section class="section--tight section svc-nav">
   <div class="container">
     <div class="grid cols-3">
-      <a class="feature reveal" href="#structural" style="text-decoration:none">
+      <a class="feature reveal" href="#structural">
         <div class="feature__check">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
         </div>
         <h3 class="feature__title">Structural &amp; Lifting</h3>
         <p class="feature__text">Design, fabrication, construction management and statutory lifting compliance.</p>
       </a>
-      <a class="feature reveal" data-delay="1" href="#mechanical" style="text-decoration:none">
+      <a class="feature reveal" data-delay="1" href="#mechanical">
         <div class="feature__check">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
         </div>
         <h3 class="feature__title">Mechanical &amp; Shutdowns</h3>
         <p class="feature__text">Turnkey maintenance, shutdown and mechanical construction execution.</p>
       </a>
-      <a class="feature reveal" data-delay="2" href="#piping" style="text-decoration:none">
+      <a class="feature reveal" data-delay="2" href="#piping">
         <div class="feature__check">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
         </div>
@@ -133,14 +137,14 @@
         </div>
       </div>
       <div class="split__media reveal" data-delay="1">
-        <img src="assets/img/structural-engineering.png" alt="Structural Engineering and Lifting Equipment" />
+        <img src="assets/img/structural-engineering.png" alt="Structural Engineering and Lifting Equipment" loading="lazy" decoding="async" />
       </div>
     </div>
   </div>
 </section>
 
 <!-- ── Mechanical ─────────────────────────────────────────────────────────── -->
-<section class="section service-block section--bone" id="mechanical" style="border-block:1px solid var(--line)">
+<section class="section service-block section--bone service-block--lined" id="mechanical">
   <div class="container">
     <div class="split split--reverse">
       <div class="reveal">
@@ -172,7 +176,7 @@
         </div>
       </div>
       <div class="split__media reveal" data-delay="1">
-        <img src="assets/img/mechenical.png" alt="Mechanical Services and Shutdown Support" />
+        <img src="assets/img/mechenical.png" alt="Mechanical Services and Shutdown Support" loading="lazy" decoding="async" />
       </div>
     </div>
   </div>
@@ -210,7 +214,7 @@
         </div>
       </div>
       <div class="split__media reveal" data-delay="1">
-        <img src="assets/img/piping.png" alt="Piping and Welding Solutions" />
+        <img src="assets/img/piping.png" alt="Piping and Welding Solutions" loading="lazy" decoding="async" />
       </div>
     </div>
   </div>
@@ -218,7 +222,7 @@
 
 <!-- ── CTA ───────────────────────────────────────────────────────────────── -->
 <section class="cta">
-  <div class="cta__bg"><img src="assets/img/CTA.png" alt="" aria-hidden="true" /></div>
+  <div class="cta__bg"><img src="assets/img/CTA.png" alt="" aria-hidden="true" loading="lazy" decoding="async" /></div>
   <div class="container section">
     <div class="cta__inner reveal">
       <p class="eyebrow on-dark">Tailored to your site</p>
@@ -275,8 +279,9 @@
     <div class="footer__bottom">
       <span class="reg">Mokaleng Engineering Projects (Pty) Ltd · Reg 2025/217697/07</span>
       <div class="footer__legal">
-        <a href="#">Privacy Policy / POPIA</a>
+        <a href="contact.html#enquiry">Privacy / POPIA requests</a>
         <span>&copy; <span id="year">2026</span> Mokaleng. All rights reserved.</span>
+        <a class="site-signature" href="https://africonnectsolutions.co.za" target="_blank" rel="noopener">Website by <strong>Africonnect Solutions</strong></a>
       </div>
     </div>
   </div>

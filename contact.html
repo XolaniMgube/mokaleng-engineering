@@ -3,12 +3,16 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script>document.documentElement.classList.add("js");</script>
 <meta name="theme-color" content="#009EA5" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/css/style.css" />
-<link rel="icon" type="image/png" href="assets/img/logo.png" />
+<link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png" />
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
 <title>Contact | Request a Quote — Mokaleng Engineering, Kinross</title>
 <meta name="description" content="Contact Mokaleng for structural, mechanical, piping, welding and maintenance support. Office in Kinross, Mpumalanga. Request a quote or site assessment." />
 </head>
@@ -92,7 +96,7 @@
       </div>
       <div class="info-card">
         <p class="info-card__label">Office address</p>
-        <div class="info-card__row" style="align-items:flex-start">
+        <div class="info-card__row info-card__row--top">
           <span class="who">Visit</span>
           <span>10 Voortrekker St, Unit 04,<br>Kinross, 2270, Mpumalanga, South Africa</span>
         </div>
@@ -107,7 +111,7 @@
     <div class="reveal" data-delay="1">
       <form class="form" id="enquiry-form" novalidate>
         <p class="eyebrow">Project enquiry</p>
-        <h2 class="heading__title" style="font-size:var(--step-2);margin-bottom:1.4rem">Request a quote</h2>
+        <h2 class="heading__title form__title">Request a quote</h2>
 
         <div class="field-row">
           <div class="field">
@@ -157,7 +161,7 @@
           <span class="field__err">Please add a short message.</span>
         </div>
         <div class="form__status" role="status" aria-live="polite"></div>
-        <button type="submit" class="btn btn--primary mt-2" style="width:100%;justify-content:center">
+        <button type="submit" class="btn btn--primary mt-2 form__submit">
           Send enquiry
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </button>
@@ -216,8 +220,9 @@
     <div class="footer__bottom">
       <span class="reg">Mokaleng Engineering Projects (Pty) Ltd · Reg 2025/217697/07</span>
       <div class="footer__legal">
-        <a href="#">Privacy Policy / POPIA</a>
+        <a href="contact.html#enquiry">Privacy / POPIA requests</a>
         <span>&copy; <span id="year">2026</span> Mokaleng. All rights reserved.</span>
+        <a class="site-signature" href="https://africonnectsolutions.co.za" target="_blank" rel="noopener">Website by <strong>Africonnect Solutions</strong></a>
       </div>
     </div>
   </div>
