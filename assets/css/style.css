@@ -478,8 +478,8 @@ h1, h2, h3, h4 {
 
 @media (max-width: 1040px) {
   .nav { display: none; }
-  .burger { display: flex; align-items: center; justify-content: center; }
-  .header__cta { margin-left: auto; }
+  .burger { display: flex; align-items: center; justify-content: center; margin-left: auto; }
+  .header__cta { margin-left: 0; }
 }
 
 /* Mobile menu */
@@ -787,7 +787,13 @@ body.menu-open { overflow: hidden; }
   margin-top: 0.4rem;
   line-height: 1.4;
 }
-.about-feature__cta { margin-top: 2.2rem; align-self: flex-start; }
+.about-feature__actions {
+  margin-top: 2.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
 
 @media (max-width: 900px) {
   .about-feature { grid-template-columns: 1fr; }
@@ -1001,44 +1007,117 @@ body.menu-open { overflow: hidden; }
   font-weight: 600;
 }
 
+/* ── Trusted-by marquee ──────────────────────────────────────────────────── */
+.trusted {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+.trusted__label {
+  text-align: center;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.8rem;
+}
+.marquee {
+  position: relative;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
+}
+.marquee__track {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  width: max-content;
+  animation: marquee-scroll 36s linear infinite;
+}
+.marquee:hover .marquee__track { animation-play-state: paused; }
+.marquee__chip {
+  flex: none;
+  height: 82px;
+  min-width: 188px;
+  padding: 0 2.25rem;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--speed) var(--ease), transform var(--speed) var(--ease);
+}
+.marquee__chip:hover {
+  box-shadow: 0 12px 30px -16px rgba(0,0,0,0.25);
+  transform: translateY(-3px);
+}
+.marquee__chip img {
+  height: 42px;
+  max-width: 138px;
+  width: auto;
+  object-fit: contain;
+}
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-50% - 0.625rem)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track { animation: none; flex-wrap: wrap; justify-content: center; width: auto; }
+  .marquee { -webkit-mask-image: none; mask-image: none; }
+}
+
 /* ── CTA section ─────────────────────────────────────────────────────────── */
 .cta {
   position: relative;
   background: var(--teal-deep);
   overflow: hidden;
 }
+.cta__bg { position: absolute; inset: 0; z-index: 0; }
+.cta__bg img { width: 100%; height: 100%; object-fit: cover; }
+/* Left-weighted scrim keeps text crisp; plant shows through on the right */
 .cta::before {
   content: "";
   position: absolute;
   inset: 0;
+  z-index: 1;
   background:
-    radial-gradient(ellipse at 20% 70%, rgba(194,112,59,0.18), transparent 45%),
-    radial-gradient(ellipse at 78% 40%, rgba(0,158,165,0.2), transparent 50%);
+    linear-gradient(90deg, rgba(4,46,49,0.97) 0%, rgba(4,46,49,0.85) 42%, rgba(4,46,49,0.55) 75%, rgba(4,46,49,0.4) 100%),
+    linear-gradient(0deg, rgba(4,46,49,0.6) 0%, transparent 45%),
+    rgba(4,46,49,0.35);
 }
-.cta__bg { position: absolute; inset: 0; z-index: 0; opacity: 0.15; }
-.cta__bg img { width: 100%; height: 100%; object-fit: cover; filter: saturate(0); }
+/* Thin teal accent bar along the top edge */
+.cta::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  z-index: 2;
+  background: linear-gradient(90deg, var(--teal-light), var(--teal) 40%, transparent 90%);
+}
 .cta__inner {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   max-width: 60ch;
   color: var(--white);
 }
+.cta__inner .eyebrow { margin-bottom: 1rem; }
 .cta__title {
   font-size: var(--step-3);
   color: var(--white);
   max-width: 18ch;
+  text-shadow: 0 2px 24px rgba(0,0,0,0.3);
 }
 .cta__text {
   margin-top: 1rem;
   font-size: var(--step-1);
-  color: rgba(255,255,255,0.82);
+  color: rgba(255,255,255,0.88);
   max-width: 46ch;
 }
 .cta__actions { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 0.75rem; }
 .cta .btn--primary {
   background: var(--white);
   color: var(--teal-deep);
-  box-shadow: none;
+  box-shadow: 0 10px 30px -12px rgba(0,0,0,0.4);
 }
 .cta .btn--primary:hover { background: var(--teal-pale); color: var(--teal-dark); }
 
@@ -1364,14 +1443,23 @@ body.menu-open { overflow: hidden; }
 @media (max-width: 720px) { .clients-grid { grid-template-columns: repeat(2, 1fr); } }
 .clients-grid--compact .client-cell { aspect-ratio: 3/1; }
 .client-cell {
-  background: var(--white);
+  background: #fff;
   aspect-ratio: 3/2;
   display: grid;
   place-items: center;
-  padding: 1.25rem;
-  transition: background var(--speed) var(--ease);
+  padding: 1.5rem 1.75rem;
 }
-.client-cell:hover { background: var(--teal-pale); }
+.client-logo-img {
+  max-width: 72%;
+  max-height: 52px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: transform var(--speed) var(--ease);
+}
+.client-cell:hover .client-logo-img {
+  transform: scale(1.05);
+}
 .client-logo {
   font-family: var(--display);
   font-weight: 700;
@@ -1545,23 +1633,6 @@ body.menu-open { overflow: hidden; }
 .footer__legal a { color: var(--steel-light); }
 .footer__legal a:hover { color: var(--teal-light); }
 .footer__legal span { color: var(--steel); }
-
-/* ── WhatsApp float ──────────────────────────────────────────────────────── */
-.wa-float {
-  position: fixed;
-  bottom: 22px; right: 22px;
-  z-index: 90;
-  width: 56px; height: 56px;
-  border-radius: 50%;
-  background: #25D366;
-  color: #fff;
-  display: grid;
-  place-items: center;
-  box-shadow: 0 10px 28px -8px rgba(0,0,0,0.45);
-  transition: transform var(--speed) var(--ease);
-}
-.wa-float:hover { transform: scale(1.08); }
-.wa-float svg { width: 28px; height: 28px; }
 
 /* ── Reveal animations ───────────────────────────────────────────────────── */
 .reveal {

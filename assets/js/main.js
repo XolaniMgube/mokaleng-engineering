@@ -61,7 +61,7 @@
     revealEls.forEach((el) => io.observe(el));
   }
 
-  /* ---- Contact form (no backend: builds mailto + WhatsApp) ---- */
+  /* ---- Contact form (no backend: builds a mailto enquiry) ---- */
   const form = document.querySelector("#enquiry-form");
   if (form) {
     const status = form.querySelector(".form__status");
@@ -73,11 +73,10 @@
       service: form.querySelector("#f-service"),
       location: form.querySelector("#f-location"),
       message: form.querySelector("#f-message"),
-      consent: form.querySelector("#f-consent"),
     };
 
     const setError = (input, on) => {
-      const wrap = input.closest(".field, .consent");
+      const wrap = input.closest(".field");
       if (!wrap) return;
       wrap.classList.toggle("field--error", on);
     };
@@ -93,10 +92,6 @@
       });
       if (fields.email.value.trim() && !emailOK(fields.email.value.trim())) {
         setError(fields.email, true);
-        ok = false;
-      }
-      if (!fields.consent.checked) {
-        setError(fields.consent, true);
         ok = false;
       }
       return ok;
@@ -145,30 +140,12 @@
         "&body=" +
         encodeURIComponent(body);
 
-      // whatsapp (Andre default contact)
-      const wa =
-        "https://wa.me/27827272851?text=" + encodeURIComponent(body);
-
       showStatus(
         "Thank you, " +
           v("name").split(" ")[0] +
-          ". Your email client is opening — or send this enquiry straight to us on WhatsApp.",
+          ". Your email client is opening with the enquiry ready to send.",
         "ok"
       );
-
-      // inject quick WhatsApp action under status
-      let waBtn = form.querySelector(".form__wa");
-      if (!waBtn) {
-        waBtn = document.createElement("a");
-        waBtn.className = "btn btn--solid form__wa";
-        waBtn.style.marginTop = "0.9rem";
-        waBtn.innerHTML =
-          'Send via WhatsApp <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>';
-        status.after(waBtn);
-      }
-      waBtn.href = wa;
-      waBtn.target = "_blank";
-      waBtn.rel = "noopener";
 
       window.location.href = mailto;
     });
